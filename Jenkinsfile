@@ -7,7 +7,7 @@ steps {
 echo 'this is linux machine'     
 sh '''    
 touch /pipeline.me    
-ls /root/home
+ls /
 '''  
 } 
 }   
@@ -15,6 +15,7 @@ stage('Running windows commands') {
 agent {label 'windows'}
 steps {
  echo 'this windows slave machine'
+ bat 'md E:\abc'
 }
 
    
