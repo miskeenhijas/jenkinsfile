@@ -13,8 +13,9 @@ ls /root/home
 }   
 stage('Running windows commands') {
 agent {label 'windows'}
-
+steps {
  echo 'this windows slave machine'
+}
 
    
 }
