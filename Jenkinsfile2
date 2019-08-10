@@ -1,0 +1,30 @@
+pipeline {
+agent none
+stages {
+
+stage ('fetching source code') {
+agent {label 'windows'}
+
+steps {
+
+git 'https://github.com/ValaxyTech/hello-world.git'
+
+}
+
+stage ('compiling souce code'){
+agent {label 'windows'}
+tools {
+	maven 'apache-maven-3.6.1'
+}
+steps {
+sh 'mvn clean compile package'
+
+
+}
+
+} 
+
+}
+	
+}
+}
