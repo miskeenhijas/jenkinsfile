@@ -3,22 +3,21 @@ agent none
 stages {
 
 stage ('fetching source code') {
-agent {label 'master'}
-
+agent {node 'windows'}
 steps {
-
-git 'https://github.com/ValaxyTech/hello-world.git'
+sh 'rm -rf hello-world'
+sh 'git clone https://github.com/ValaxyTech/hello-world.git'
 
 }
 }
+
 stage ('compiling souce code'){
-agent {label 'master'}
+agent {node 'windows'}
 tools {
 	maven 'maven 3.6.1'
 }
 steps {
-sh 'mvn clean compile package'
-
+sh 'mvn clean compile package -f hello-world'
 
 }
 
