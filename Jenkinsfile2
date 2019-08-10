@@ -10,7 +10,7 @@ steps {
 git 'https://github.com/ValaxyTech/hello-world.git'
 
 }
-
+}
 stage ('compiling souce code'){
 agent {label 'windows'}
 tools {
@@ -22,9 +22,8 @@ sh 'mvn clean compile package'
 
 }
 
-} 
-
+}
+}
 }
 	
-}
-}
+
