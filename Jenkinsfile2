@@ -3,7 +3,7 @@ agent none
 stages {
 
 stage ('fetching source code') {
-agent {label 'windows'}
+agent {label 'master'}
 
 steps {
 
@@ -12,7 +12,7 @@ git 'https://github.com/ValaxyTech/hello-world.git'
 }
 }
 stage ('compiling souce code'){
-agent {label 'windows'}
+agent {label 'master'}
 tools {
 	maven 'maven 3.6.1'
 }
